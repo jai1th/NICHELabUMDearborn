@@ -167,7 +167,6 @@
       opacity: 0.82;
       filter: grayscale(15%);
       transition: opacity 0.2s;
-      border-radius: 15px;
     }
 
     .hero-logo-col img:hover {
@@ -189,12 +188,7 @@
 
     /* ─── Content column ─── */
     .hero-content-col {
-      padding: 0 2rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      padding-left: 2.5rem;
     }
 
     /* Small venue/conference chip above the title */
@@ -272,7 +266,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.6rem;
-      justify-content: center;
     }
 
     .hero-btn {
@@ -516,7 +509,7 @@
 
           <!-- LEFT: UMDearborn logo (1/5) -->
           <div class="hero-logo-col" style="flex: 0 0 20%; min-width: 120px; align-items: center; justify-content: center;">
-            <img src="static/images/cecs_white.png" alt="University of Michigan-Dearborn">
+            <img src="static/images/umdearborn_box.png" alt="University of Michigan-Dearborn">
           </div>
 
           <!-- Vertical divider -->
@@ -529,7 +522,7 @@
             <span class="venue-chip"><!-- TODO: e.g. CVPR 2025 --> Conference Name · Year</span>
 
             <!-- Paper title -->
-            <h1 class="publication-title">Project Title</h1>
+            <h1 class="publication-title">Academic Project Page</h1>
 
             <!-- Authors -->
             <div class="hero-authors">
@@ -570,7 +563,7 @@
 
           <!-- RIGHT: NICHE logo (1/5) -->
           <div class="hero-logo-col" style="flex: 0 0 20%; min-width: 120px; align-items: center; justify-content: center;">
-            <img src="static/images/niche_gemini.webp" alt="NICHE Robotics Lab" style="max-height: 200px;">
+            <img src="static/images/niche.webp" alt="NICHE Robotics Lab">
           </div>
 
         </div>
@@ -776,25 +769,16 @@
   </main>
 
   <footer class="footer">
-    <div class="container is-fluid">
-      <div style="display: flex; align-items: center; gap: 0;">
-
-        <!-- Logos (1/5) -->
-        <div style="flex: 0 0 20%; display: flex; align-items: center; gap: 1.25rem; padding-right: 2rem;">
-          <img src="static/images/cecs_white.png" alt="University of Michigan-Dearborn"
-               style="max-height: 72px; width: auto; object-fit: contain; opacity: 0.4; border-radius: 6px;">
-          <img src="static/images/niche_gemini.webp" alt="NICHE Robotics Lab"
-               style="max-height: 72px; width: auto; object-fit: contain; opacity: 0.4; border-radius: 6px;">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
         </div>
-
-        <!-- Footer text (4/5) -->
-        <div style="flex: 1;" class="content">
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Project Title</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-        </div>
-
       </div>
     </div>
   </footer>

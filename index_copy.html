@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="NICHE Robotics Lab @ UM Dearborn">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="PAPER_TITLE">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="PAPER_TITLE">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon_io/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon_io/favicon.ico">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts - IBM Plex family -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "PAPER_TITLE",
+    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "FIRST_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "SECOND_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONFERENCE_OR_JOURNAL_NAME"
+    },
+    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NICHE Robotics Lab, University of Michigan-Dearborn",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <!-- <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Our Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list"> -->
+        <!-- TODO: Replace with your lab's related works -->
+        <!-- <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 1</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 2</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 3</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div> -->
+
+  <main id="main-content">
+
+  <!-- ===== HERO + LOGOS (split layout) ===== -->
+  <section class="hero" id="hero-logos">
+    <div class="hero-body">
+      <div class="container is-fluid">
+        <div class="columns is-vcentered" style="min-height: 280px;">
+
+          <!-- LEFT: logos (33%) -->
+          <div class="column is-one-fifth has-text-centered" style="border-right: 1px solid rgba(128,128,128,0.2); padding-right: 2rem;">
+            <img src="static/images/umdearborn_box.png" alt="University of Michigan-Dearborn Logo"
+                 style="max-height: 130px; width: auto; object-fit: contain; display: block; margin: 0 auto 1.5rem;">
+            <img src="static/images/niche.webp" alt="NICHE Robotics Lab Logo"
+                 style="max-height: 130px; width: auto; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+
+          <!-- RIGHT: title, authors, links (80%) -->
+          <div class="column has-text-left" style="padding-left: 2.5rem;">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors" style="margin-top: 0.5rem;">
+              <!-- TODO: Replace with your institution and conference/journal info -->
+              <span class="author-block">NICHE Robotics Lab @ UM Dearborn</span>
+              <!-- TODO: Remove if no equal contribution -->
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            </div>
+
+            <div class="publication-links" style="margin-top: 1rem;">
+              <!-- TODO: Update with your arXiv paper ID -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- TODO: Add your supplementary material PDF or remove this section -->
+              <!-- <span class="link-block">
+                <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Supplementary</span>
+                </a>
+              </span> -->
+              <!-- TODO: Replace with your GitHub repository URL -->
+              <span class="link-block">
+                <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- TODO: Update with your arXiv paper ID -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== END HERO + LOGOS ===== -->
+
+
+  <!-- ===== 2. ABSTRACT ===== -->
+  <section class="section hero is-light" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <!-- TODO: Replace with your paper abstract -->
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== END ABSTRACT ===== -->
+
+
+  <!-- ===== 3. DATASET OVERVIEW ===== -->
+  <section class="section" id="dataset">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Dataset Overview</h2>
+      <p class="subtitle is-5">
+        <!-- TODO: Replace with a short description of your dataset -->
+        A brief description of the dataset, its scale, and what it contains.
+      </p>
+    </div>
+
+    <!-- Dataset Carousel 1 -->
+    <div class="hero is-small" style="margin-top: 2rem;">
+      <div class="hero-body">
+        <div class="container">
+          <h3 class="title is-4 has-text-centered" style="margin-bottom: 1rem;">
+            <!-- TODO: Replace with your first dataset split/subset name -->
+            Dataset Split 1
+          </h3>
+          <div id="dataset-carousel-1" class="carousel results-carousel">
+            <div class="item">
+              <!-- TODO: Replace with your dataset sample images -->
+              <img src="static/images/carousel1.jpg" alt="Dataset sample 1" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Sample description 1.</h2>
+            </div>
+            <div class="item">
+              <img src="static/images/carousel2.jpg" alt="Dataset sample 2" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Sample description 2.</h2>
+            </div>
+            <div class="item">
+              <img src="static/images/carousel3.jpg" alt="Dataset sample 3" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Sample description 3.</h2>
+            </div>
+            <div class="item">
+              <img src="static/images/carousel4.jpg" alt="Dataset sample 4" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Sample description 4.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Dataset Carousel 1 -->
+
+    <!-- Dataset Carousel 2 -->
+    <div class="hero is-small is-light" style="margin-top: 0;">
+      <div class="hero-body">
+        <div class="container">
+          <h3 class="title is-4 has-text-centered" style="margin-bottom: 1rem;">
+            <!-- TODO: Replace with your second dataset split/subset name -->
+            Dataset Split 2
+          </h3>
+          <div id="dataset-carousel-2" class="carousel results-carousel">
+            <div class="item">
+              <!-- TODO: Replace with your dataset sample images -->
+              <img src="static/images/carousel1.jpg" alt="Dataset sample A" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Sample description A.</h2>
+            </div>
+            <div class="item">
+              <img src="static/images/carousel2.jpg" alt="Dataset sample B" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Sample description B.</h2>
+            </div>
+            <div class="item">
+              <img src="static/images/carousel3.jpg" alt="Dataset sample C" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Sample description C.</h2>
+            </div>
+            <div class="item">
+              <img src="static/images/carousel4.jpg" alt="Dataset sample D" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Sample description D.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Dataset Carousel 2 -->
+
+  </section>
+  <!-- ===== END DATASET OVERVIEW ===== -->
+
+
+  <!-- ===== 4. RESULTS ===== -->
+  <section class="section" id="results">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">Results</h2>
+      <p class="subtitle is-5">
+        <!-- TODO: Replace with a brief summary of your results -->
+        Qualitative and quantitative results demonstrating the effectiveness of our approach.
+      </p>
+    </div>
+
+    <!-- Results Image Carousel -->
+    <div class="hero is-small" style="margin-top: 2rem;">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <!-- TODO: Replace with your result images -->
+              <img src="static/images/carousel1.jpg" alt="Result visualization 1" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Result 1 description.</h2>
+            </div>
+            <div class="item">
+              <img src="static/images/carousel2.jpg" alt="Result visualization 2" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Result 2 description.</h2>
+            </div>
+            <div class="item">
+              <img src="static/images/carousel3.jpg" alt="Result visualization 3" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Result 3 description.</h2>
+            </div>
+            <div class="item">
+              <img src="static/images/carousel4.jpg" alt="Result visualization 4" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Result 4 description.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Results Image Carousel -->
+
+    <!-- Results Video Player -->
+    <div class="hero is-small is-light" style="margin-top: 0;">
+      <div class="hero-body">
+        <div class="container">
+          <h3 class="title is-4 has-text-centered">Video Results</h3>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <div class="publication-video">
+                <!-- TODO: Replace YOUR_VIDEO_ID with your YouTube video ID.
+                     Alternatively, swap this iframe for a <video> tag pointing to a local file:
+                     <video controls width="100%">
+                       <source src="static/videos/results.mp4" type="video/mp4">
+                     </video> -->
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                        frameborder="0"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen>
+                </iframe>
+              </div>
+              <!-- TODO: Replace with a caption describing the video -->
+              <p class="has-text-centered" style="margin-top: 1rem;">
+                Caption describing the results shown in the video above.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Results Video Player -->
+
+  </section>
+  <!-- ===== END RESULTS ===== -->
+
+
+  <!-- ===== 5. CITATIONS ===== -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">Citations</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <!-- TODO: Replace with your paper's BibTeX entry -->
+      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
+  title={Your Paper Title Here},
+  author={First Author and Second Author and Third Author},
+  journal={Conference/Journal Name},
+  year={2024},
+  url={https://your-domain.com/your-project-page}
+}</code></pre>
+    </div>
+  </section>
+  <!-- ===== END CITATIONS ===== -->
+
+
+  <!-- ===== 6. ACKNOWLEDGEMENTS ===== -->
+  <section class="section hero is-light" id="acknowledgements">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Acknowledgements</h2>
+          <div class="content has-text-justified">
+            <!-- TODO: Replace with your acknowledgements -->
+            <p>
+              We thank the members of [Lab/Group Name] for their helpful feedback and discussions. This work was supported by [Funding Agency] under grant [Grant Number]. We also acknowledge the use of computing resources provided by [Computing Resource].
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== END ACKNOWLEDGEMENTS ===== -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
