@@ -491,6 +491,130 @@
       border-bottom-color: rgba(255, 255, 255, 0.3);
       text-decoration: none !important;
     }
+
+    /* ═══════════════════════════════════════════
+       MOBILE RESPONSIVE
+       ═══════════════════════════════════════════ */
+
+    @media screen and (max-width: 768px) {
+
+      /* Hero: allow wrapping so logos sit top, content below */
+      .hero-flex-row {
+        flex-wrap: wrap !important;
+      }
+
+      /* Each logo col takes half the row, side by side */
+      .hero-logo-col {
+        flex: 0 0 45% !important;
+        min-width: 0 !important;
+        order: 1;
+        padding: 0.75rem 0.5rem !important;
+      }
+
+      .hero-logo-col img {
+        max-height: 80px !important;
+      }
+
+      /* Override the NICHE logo's larger size on mobile */
+      .hero-logo-col img[style] {
+        max-height: 80px !important;
+      }
+
+      /* Hide vertical dividers on mobile */
+      .hero-vdivider {
+        display: none !important;
+      }
+
+      /* Content column drops below logos, full width */
+      .hero-content-col {
+        flex: 0 0 100% !important;
+        order: 2;
+        padding: 1.5rem 1rem !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        margin-top: 0.5rem;
+      }
+
+      /* Title scales down on small screens */
+      #hero-logos .publication-title {
+        font-size: clamp(1.3rem, 6vw, 1.8rem) !important;
+      }
+
+      /* Hero body padding */
+      #hero-logos .hero-body {
+        padding: 1.75rem 1rem 1.5rem !important;
+      }
+
+      /* Carousels: full width instead of 50% */
+      .results-carousel {
+        max-width: 100% !important;
+      }
+
+      /* Sections: tighter padding */
+      .section {
+        padding: 2.5rem 1rem !important;
+      }
+
+      .hero-body {
+        padding: 2rem 1rem !important;
+      }
+
+      /* pre block: smaller font, scroll horizontally */
+      pre {
+        font-size: 0.75rem !important;
+        overflow-x: auto;
+        white-space: pre;
+      }
+
+      /* Footer: stack vertically */
+      .footer-flex-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      .footer-flex-row > div:first-child {
+        flex: 0 0 auto !important;
+        width: 100%;
+        padding-right: 0 !important;
+        justify-content: center;
+      }
+
+      /* BibTeX header: allow wrap */
+      .bibtex-header {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      /* Scroll-to-top: smaller offset on mobile */
+      .scroll-to-top {
+        bottom: 1rem !important;
+        right: 1rem !important;
+      }
+    }
+
+    /* Extra small screens */
+    @media screen and (max-width: 480px) {
+      .hero-logo-col {
+        flex: 0 0 48% !important;
+      }
+
+      .hero-logo-col img {
+        max-height: 60px !important;
+      }
+
+      #hero-logos .publication-title {
+        font-size: 1.25rem !important;
+      }
+
+      .hero-authors {
+        font-size: 0.82rem !important;
+      }
+
+      .venue-chip {
+        font-size: 0.55rem !important;
+      }
+    }
   </style>
 
 </head>
@@ -512,7 +636,7 @@
       <div class="container is-fluid">
 
         <!-- Outer flex row: UM Dearborn | divider | content | divider | NICHE -->
-        <div style="display: flex; align-items: stretch; gap: 0;">
+        <div class="hero-flex-row" style="display: flex; align-items: stretch; gap: 0;">
 
           <!-- LEFT: UMDearborn logo (1/5) -->
           <div class="hero-logo-col" style="flex: 0 0 20%; min-width: 120px; align-items: center; justify-content: center;">
@@ -777,7 +901,7 @@
 
   <footer class="footer">
     <div class="container is-fluid">
-      <div style="display: flex; align-items: center; gap: 0;">
+      <div class="footer-flex-row" style="display: flex; align-items: center; gap: 0;">
 
         <!-- Logos (1/5) -->
         <div style="flex: 0 0 20%; display: flex; align-items: center; gap: 1.25rem; padding-right: 2rem;">
