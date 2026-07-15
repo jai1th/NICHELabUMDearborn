@@ -243,7 +243,44 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: rgba(255, 255, 255, 0.32);
+      margin-bottom: 0.85rem;
+    }
+
+    /* Principal investigator / lab contact line */
+    .hero-pi {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.7;
       margin-bottom: 1.75rem;
+    }
+
+    .hero-pi .hero-pi-label {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-pi a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .hero-pi a:hover {
+      color: #fff;
+      border-bottom-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-pi .hero-pi-sep {
+      color: rgba(255, 255, 255, 0.25);
+      margin: 0 0.5rem;
     }
 
     /* Ghost-style action buttons */
@@ -875,6 +912,14 @@
 
             <!-- Institution -->
             <p class="hero-institution">NICHE Robotics Lab &middot; University of Michigan-Dearborn</p>
+
+            <!-- Principal investigator -->
+            <p class="hero-pi">
+              <span class="hero-pi-label">Principal Investigator</span>
+              <a href="https://umdearborn.edu/people-um-dearborn/karishma-patnaik" target="_blank" rel="noopener">Dr Karishma Patnaik</a>
+              <span class="hero-pi-sep">&middot;</span>
+              <a href="mailto:kpatnaik@umich.edu">kpatnaik@umich.edu</a>
+            </p>
 
           </div>
 
