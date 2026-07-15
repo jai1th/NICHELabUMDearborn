@@ -1,0 +1,16 @@
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Line chart comparing mean spectral reflectance of a clean versus food-contaminated paper hot cup across 18 wavelength channels from 410 to 940 nanometers, showing the contaminated cup reads about four times higher at 560 and 585 nanometers.</h2>
+<div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:8px;font-size:12px;color:var(--text-secondary);">
+<span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#2a78d6;"></span>Clean (solid)</span>
+<span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#eb6834;"></span>Food-contaminated (dashed)</span>
+</div>
+<div style="position:relative;width:100%;height:300px;">
+<canvas id="cupChart" role="img" aria-label="Line chart: clean vs food-contaminated paper hot cup mean spectra, 410 to 940 nm">Clean cup peaks at 460 nm (248) and 610 nm (200) but drops to 13 at 560 nm; contaminated cup reads 57 at 560 nm.</canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const wl=['410','435','460','485','510','535','560','585','610','645','680','705','730','760','810','860','900','940'];
+new Chart(document.getElementById('cupChart'),{type:'line',data:{labels:wl,datasets:[
+{label:'Clean',data:[4.8,74.7,247.6,89.3,140.4,173.6,13.4,18.1,200.4,23.6,41.6,7.2,13.4,7.8,9.5,5.3,1.3,1.9],borderColor:'#2a78d6',backgroundColor:'#2a78d6',borderWidth:2,pointRadius:3,tension:0.2},
+{label:'Food-contaminated',data:[4.0,70.2,286.6,73.0,126.0,169.6,56.8,54.4,186.4,22.6,31.4,8.0,11.8,7.0,8.6,4.3,1.3,1.9],borderColor:'#eb6834',backgroundColor:'#eb6834',borderWidth:2,borderDash:[6,4],pointRadius:3,pointStyle:'rect',tension:0.2}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toFixed(1)}}},scales:{x:{title:{display:true,text:'Wavelength (nm)',color:'#898781',font:{size:12}},ticks:{color:'#898781',maxRotation:45,autoSkip:false,font:{size:11}},grid:{display:false}},y:{title:{display:true,text:'Calibrated counts',color:'#898781',font:{size:12}},ticks:{color:'#898781'},grid:{color:'rgba(137,135,129,0.15)'}}}}});
+</script>

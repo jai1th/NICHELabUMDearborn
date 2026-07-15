@@ -1,0 +1,29 @@
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Line chart of mean spectra for all eight measured objects. Opaque items like carton, HDPE bottle and paper cups show strong signal peaking near 460 nanometers; clear glass and PET bottle show weak signal near zero across all channels.</h2>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;font-size:12px;color:var(--text-secondary);">
+<span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#2a78d6;"></span>Carton</span>
+<span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#1baf7a;"></span>HDPE food</span>
+<span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#eda100;"></span>Cup clean</span>
+<span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#008300;"></span>Cup food</span>
+<span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#4a3aa7;"></span>Box food 002</span>
+<span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#e34948;"></span>Box food 001</span>
+<span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#e87ba4;"></span>Glass clean</span>
+<span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#898781;"></span>PET clean</span>
+</div>
+<div style="position:relative;width:100%;height:340px;">
+<canvas id="allChart" role="img" aria-label="Line chart of mean spectra for all eight objects across 18 channels">Opaque objects read 100 to 295 counts at their peaks; clear glass and PET stay below 90 everywhere.</canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const wl2=['410','435','460','485','510','535','560','585','610','645','680','705','730','760','810','860','900','940'];
+const mk=(l,d,c,dash,pt)=>({label:l,data:d,borderColor:c,backgroundColor:c,borderWidth:2,borderDash:dash,pointRadius:2.5,pointStyle:pt,tension:0.2});
+new Chart(document.getElementById('allChart'),{type:'line',data:{labels:wl2,datasets:[
+mk('Carton',[4.0,63.7,220.3,64.7,108.1,137.3,44.2,45.9,150.1,21.3,29.6,6.2,10.2,6.1,7.0,4.3,1.3,1.9],'#2a78d6',[],'circle'),
+mk('HDPE food',[5.5,85.2,294.8,95.0,144.5,184.0,66.2,66.3,212.8,29.4,41.8,9.3,13.4,8.7,10.3,5.3,2.0,2.9],'#1baf7a',[6,4],'rect'),
+mk('Cup clean',[4.8,74.7,247.6,89.3,140.4,173.6,13.4,18.1,200.4,23.6,41.6,7.2,13.4,7.8,9.5,5.3,1.3,1.9],'#eda100',[],'triangle'),
+mk('Cup food',[4.0,70.2,286.6,73.0,126.0,169.6,56.8,54.4,186.4,22.6,31.4,8.0,11.8,7.0,8.6,4.3,1.3,1.9],'#008300',[6,4],'rectRot'),
+mk('Box food 002',[4.8,69.6,235.9,77.5,115.6,148.3,59.2,60.2,177.8,27.9,39.8,7.9,11.8,7.8,9.4,5.3,1.3,1.9],'#4a3aa7',[2,3],'circle'),
+mk('Box food 001',[0.0,1.0,4.0,2.7,5.9,7.3,9.3,8.8,67.2,5.0,18.7,3.5,3.8,2.6,3.4,2.1,0.0,0.0],'#e34948',[2,3],'rect'),
+mk('Glass clean',[0.1,15.9,53.8,11.9,35.2,45.7,8.3,10.0,45.9,4.2,5.3,0.9,3.1,1.8,1.8,0.1,0.0,0.0],'#e87ba4',[8,3],'triangle'),
+mk('PET clean',[1.3,15.2,36.6,9.4,15.5,5.7,0.7,1.3,45.8,1.1,2.6,0.1,2.8,1.0,1.5,0.3,0.0,0.0],'#898781',[8,3],'rectRot')
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toFixed(1)}}},scales:{x:{title:{display:true,text:'Wavelength (nm)',color:'#898781',font:{size:12}},ticks:{color:'#898781',maxRotation:45,autoSkip:false,font:{size:11}},grid:{display:false}},y:{title:{display:true,text:'Calibrated counts',color:'#898781',font:{size:12}},ticks:{color:'#898781'},grid:{color:'rgba(137,135,129,0.15)'}}}}});
+</script>

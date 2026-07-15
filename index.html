@@ -5,45 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Primary Meta Tags -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="title" content="WasteSep: Multi-Modal Waste Classification and Routing">
+  <meta name="description" content="WasteSep combines vision-language models with optical spectroscopy to classify waste and route it to the correct disposal stream, with contamination detection as an explicit safety check. Developed at the NICHE Robotics Lab, University of Michigan-Dearborn, in collaboration with UMHealth (Michigan Medicine).">
+  <meta name="keywords" content="waste classification, recycling contamination, vision-language model, optical spectroscopy, ROS 2, robotics, Michigan Medicine, machine learning, computer vision">
+  <meta name="author" content="NICHE Robotics Lab, University of Michigan-Dearborn">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="NICHE Robotics Lab @ UM Dearborn">
-  <meta property="og:title" content="PAPER_TITLE">
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:title" content="WasteSep: Multi-Modal Waste Classification and Routing">
+  <meta property="og:description" content="Vision-language models and optical spectroscopy for waste classification and routing, with contamination detection as an explicit safety check.">
+  <!-- TODO: replace with the live GitHub Pages URL for this project -->
+  <meta property="og:url" content="https://YOUR_GITHUB_PAGES_URL/">
+  <!-- TODO: add static/images/social_preview.png (1200x630 social card) -->
+  <meta property="og:image" content="static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="og:image:alt" content="WasteSep - Multi-Modal Waste Classification and Routing">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  <meta name="twitter:title" content="WasteSep: Multi-Modal Waste Classification and Routing">
+  <meta name="twitter:description" content="Vision-language models and optical spectroscopy for waste classification and routing, with contamination detection as an explicit safety check.">
+  <meta name="twitter:image" content="static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="WasteSep - Multi-Modal Waste Classification and Routing">
 
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
@@ -57,8 +44,9 @@
   <link rel="preconnect" href="https://ajax.googleapis.com">
   <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
+  <title>WasteSep: Multi-Modal Waste Classification and Routing | NICHE Robotics Lab</title>
 
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon_io/favicon.ico">
@@ -86,38 +74,29 @@
 
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Chart.js for the inlined spectral plots (see Progress section) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
 
-  <!-- Structured Data for Academic Papers -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": { "@type": "Organization", "name": "INSTITUTION_NAME" }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": { "@type": "Organization", "name": "INSTITUTION_NAME" }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": { "@type": "Organization", "name": "CONFERENCE_OR_JOURNAL_NAME" },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "@type": "CreativeWork",
+    "name": "WasteSep: Multi-Modal Waste Classification and Routing",
+    "description": "WasteSep combines vision-language models with optical spectroscopy to classify waste and route it to the correct disposal stream, with contamination detection as an explicit safety check.",
+    "creator": {
+      "@type": "Organization",
+      "name": "NICHE Robotics Lab",
+      "affiliation": { "@type": "Organization", "name": "University of Michigan-Dearborn" }
+    },
+    "keywords": ["waste classification", "recycling contamination", "vision-language model", "optical spectroscopy", "ROS 2", "robotics"],
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/"
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/"
   }
   </script>
 
@@ -313,7 +292,7 @@
       font-size: 17px !important;
     }
 
-    /* Section label — tiny mono tag above every heading */
+    /* Section label - tiny mono tag above every heading */
     .section-label {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.6rem;
@@ -324,7 +303,7 @@
       display: block;
     }
 
-    /* Section headings — serif only here, strip gradient underline */
+    /* Section headings - serif only here, strip gradient underline */
     .title.is-3 {
       font-family: 'IBM Plex Serif', Georgia, serif !important;
       font-size: 1.55rem !important;
@@ -348,7 +327,7 @@
       margin-bottom: 1.5rem !important;
     }
 
-    /* is-light sections — very subtle tint instead of a solid bg change */
+    /* is-light sections - very subtle tint instead of a solid bg change */
     .hero.is-light,
     section.hero.is-light {
       background: rgba(255, 255, 255, 0.022) !important;
@@ -356,7 +335,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
     }
 
-    /* Abstract / justified body text — sans only, no serif in body */
+    /* Abstract / justified body text - sans only, no serif in body */
     .content.has-text-justified {
       font-family: 'IBM Plex Sans', sans-serif !important;
       font-size: 1.15rem !important;
@@ -371,7 +350,7 @@
       font-family: 'IBM Plex Sans', sans-serif !important;
     }
 
-    /* Carousel items — no heavy shadows, thin border */
+    /* Carousel items - no heavy shadows, thin border */
     .results-carousel .item {
       border: 1px solid rgba(255, 255, 255, 0.07) !important;
       box-shadow: none !important;
@@ -394,7 +373,76 @@
       font-weight: 400 !important;
     }
 
-    /* Video embed — minimal border, no lift-on-hover */
+    /* ─── Carousel controls: keep arrows + dots off the image ─── */
+    /* DOM is .results-carousel > .slider > .slider-container. The slides are clipped
+       by .slider-container, so the outer wrappers can overflow to let the arrows sit in
+       the side gutter and the dots sit below the image. */
+    .results-carousel,
+    .results-carousel .slider {
+      overflow: visible !important;
+    }
+
+    .results-carousel {
+      margin-bottom: 2.25rem !important;
+    }
+
+    /* Arrows moved just outside the frame */
+    .results-carousel .slider-navigation-previous,
+    .results-carousel .slider-navigation-next {
+      width: 38px !important;
+      height: 38px !important;
+      margin-top: -19px !important;
+      background-color: rgba(255, 255, 255, 0.92) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
+    }
+
+    .results-carousel .slider-navigation-previous {
+      left: -3.25rem !important;
+      right: auto !important;
+    }
+
+    .results-carousel .slider-navigation-next {
+      right: -3.25rem !important;
+      left: auto !important;
+    }
+
+    .results-carousel .slider-navigation-previous:hover,
+    .results-carousel .slider-navigation-next:hover {
+      background-color: #fff !important;
+      transform: scale(1.08) !important;
+    }
+
+    /* Position indicator moved below the image */
+    .results-carousel .slider-pagination {
+      position: absolute !important;
+      top: calc(100% + 0.6rem) !important;
+      bottom: auto !important;
+      padding: 0 !important;
+    }
+
+    .results-carousel .slider-pagination .slider-page {
+      width: 7px !important;
+      height: 7px !important;
+      background: rgba(255, 255, 255, 0.28) !important;
+      box-shadow: none !important;
+    }
+
+    .results-carousel .slider-pagination .slider-page.is-active,
+    .results-carousel .slider-pagination .slider-page:hover {
+      background: var(--accent-color, #38bdf8) !important;
+      transform: scale(1.3) !important;
+    }
+
+    /* On mobile the carousel is full-width (no side gutter), so hide the arrows
+       and rely on swipe + the dots below. */
+    @media screen and (max-width: 768px) {
+      .results-carousel .slider-navigation-previous,
+      .results-carousel .slider-navigation-next {
+        display: none !important;
+      }
+    }
+
+    /* Video embed - minimal border, no lift-on-hover */
     .publication-video {
       border-radius: 3px !important;
       box-shadow: none !important;
@@ -420,7 +468,7 @@
       line-height: 1.75;
     }
 
-    /* Copy BibTeX button — ghost style matching hero buttons */
+    /* Copy BibTeX button - ghost style matching hero buttons */
     .copy-bibtex-btn {
       background: transparent !important;
       color: rgba(255, 255, 255, 0.38) !important;
@@ -444,7 +492,7 @@
       box-shadow: none !important;
     }
 
-    /* Scroll-to-top — ghost, square */
+    /* Scroll-to-top - ghost, square */
     .scroll-to-top {
       background: transparent !important;
       border: 1px solid rgba(255, 255, 255, 0.16) !important;
@@ -464,7 +512,7 @@
       box-shadow: none !important;
     }
 
-    /* Footer — ultra minimal */
+    /* Footer - ultra minimal */
     .footer {
       border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
       background: transparent !important;
@@ -615,6 +663,169 @@
         font-size: 0.55rem !important;
       }
     }
+
+    /* ═══════════════════════════════════════════
+       WASTESEP - ACCOMPLISHMENT CARDS + STATS
+       ═══════════════════════════════════════════ */
+
+    .accomplishment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+      text-align: left;
+    }
+
+    .accomplishment-card {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      padding: 1.75rem 1.6rem;
+      background: rgba(255, 255, 255, 0.015);
+      transition: border-color 0.2s, background 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .accomplishment-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .accomplishment-card .card-index {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.25);
+      margin-bottom: 0.9rem;
+    }
+
+    .accomplishment-card h3 {
+      font-family: 'IBM Plex Serif', Georgia, serif !important;
+      font-size: 1.12rem !important;
+      font-weight: 600 !important;
+      color: rgba(255, 255, 255, 0.9) !important;
+      letter-spacing: -0.01em !important;
+      line-height: 1.25 !important;
+      margin-bottom: 0.85rem !important;
+      text-transform: none !important;
+    }
+
+    .accomplishment-card p {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 1.25rem;
+    }
+
+    .accomplishment-card p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* Stat highlight row inside a card */
+    .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      margin-top: auto;
+      padding-top: 1.15rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat .stat-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.32rem;
+      font-weight: 500;
+      color: var(--accent-color, #38bdf8);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat .stat-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.56rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(255, 255, 255, 0.32);
+      margin-top: 0.4rem;
+    }
+
+    /* ─── Future Work list ─── */
+    .whats-next-list {
+      list-style: none;
+      margin: 2rem auto 0;
+      max-width: 640px;
+      padding: 0;
+      text-align: left;
+    }
+
+    .whats-next-list li {
+      position: relative;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 1rem 0 1rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .whats-next-list li:last-child {
+      border-bottom: none;
+    }
+
+    .whats-next-list li::before {
+      content: '\2192';
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      color: var(--accent-color, #38bdf8);
+      font-family: 'IBM Plex Mono', monospace;
+      opacity: 0.7;
+    }
+
+    /* ─── Standalone project figure (spectral plot / pipeline diagram) ─── */
+    .project-figure {
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      text-align: center;
+    }
+
+    .project-figure img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 3px;
+    }
+
+    /* Inlined Chart.js spectral plots sit in the same bordered frame as figures */
+    .project-figure .chart-embed {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 3px;
+      padding: 1.25rem 1.25rem 0.85rem;
+      background: rgba(255, 255, 255, 0.015);
+      text-align: left;
+    }
+
+    .project-figure figcaption {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.35);
+      margin-top: 0.9rem;
+      letter-spacing: 0.02em;
+      line-height: 1.6;
+    }
+
+    /* Cards stack to a single column on narrow screens */
+    @media screen and (max-width: 768px) {
+      .accomplishment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 
 </head>
@@ -646,46 +857,24 @@
           <!-- Vertical divider -->
           <div class="hero-vdivider"></div>
 
-          <!-- CENTER: title, authors, links (3/5) -->
+          <!-- CENTER: title, tagline (3/5) -->
           <div class="hero-content-col" style="flex: 0 0 60%; min-width: 0;">
 
-            <!-- Venue chip -->
-            <span class="venue-chip"><!-- TODO: e.g. CVPR 2025 --> Conference Name · Year</span>
+            <!-- Collaboration chip -->
+            <span class="venue-chip">In collaboration with UMHealth · Michigan Medicine</span>
 
-            <!-- Paper title -->
-            <h1 class="publication-title">Project Title</h1>
+            <!-- Project title -->
+            <h1 class="publication-title">WasteSep: Multi-Modal Waste Classification and Routing</h1>
 
-            <!-- Authors -->
-            <div class="hero-authors">
-              <a href="FIRST_AUTHOR_LINK" target="_blank">First Author</a><sup>*</sup>,&ensp;
-              <a href="SECOND_AUTHOR_LINK" target="_blank">Second Author</a><sup>*</sup>,&ensp;
-              <a href="THIRD_AUTHOR_LINK" target="_blank">Third Author</a>
-            </div>
-            <p class="hero-equal-note"><sup>*</sup>&thinsp;Equal contribution</p>
+            <!-- One-line system summary -->
+            <p class="hero-authors">
+              A system that combines vision-language models with optical spectroscopy to classify
+              waste and route it to the correct disposal stream, treating contamination detection as
+              an explicit safety check.
+            </p>
 
             <!-- Institution -->
             <p class="hero-institution">NICHE Robotics Lab &middot; University of Michigan-Dearborn</p>
-
-            <!-- Ghost action buttons -->
-            <div class="hero-links">
-              <!-- TODO: uncomment and fill in links as needed -->
-              <!--
-              <a href="https://arxiv.org/pdf/ARXIV_ID.pdf" target="_blank" class="hero-btn">
-                <i class="fas fa-file-pdf"></i> Paper
-              </a>
-              <a href="static/pdfs/supplementary_material.pdf" target="_blank" class="hero-btn">
-                <i class="fas fa-file-alt"></i> Supplementary
-              </a>
-              -->
-              <a href="https://github.com/YOUR_REPO" target="_blank" class="hero-btn">
-                <i class="fab fa-github"></i> Code
-              </a>
-              <!--
-              <a href="https://arxiv.org/abs/ARXIV_ID" target="_blank" class="hero-btn">
-                <i class="ai ai-arxiv"></i> arXiv
-              </a>
-              -->
-            </div>
 
           </div>
 
@@ -705,197 +894,232 @@
   <!-- ===== END HERO + LOGOS ===== -->
 
 
-  <!-- ===== 2. ABSTRACT ===== -->
-  <section class="section hero is-light" id="abstract">
+  <!-- ===== 2. OVERVIEW ===== -->
+  <section class="section hero is-light" id="mission">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <span class="section-label">/ Abstract</span>
-          <h2 class="title is-3">Abstract</h2>
+          <span class="section-label">/ Overview</span>
+          <h2 class="title is-3">Overview</h2>
           <div class="content has-text-justified">
-            <!-- TODO: Replace with your paper abstract -->
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+              Contamination is the most costly failure mode in recycling: a single soiled item can
+              send an entire batch of recyclables to landfill. WasteSep addresses this by combining
+              vision-language models with optical spectroscopy to classify waste items and route them
+              into the correct stream, recyclable or landfill, with contamination detection
+              incorporated as an explicit safety check. The system targets business and administrative
+              waste streams in healthcare settings, and is developed in collaboration with UMHealth
+              (Michigan Medicine).
             </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- ===== END ABSTRACT ===== -->
+  <!-- ===== END OVERVIEW ===== -->
 
 
-  <!-- ===== 3. DATASET OVERVIEW ===== -->
-  <section class="section" id="dataset">
+  <!-- ===== 3. PROGRESS ===== -->
+  <section class="section" id="accomplishments">
     <div class="container is-max-desktop has-text-centered">
-      <span class="section-label">/ Dataset Overview</span>
-      <h2 class="title is-3">Dataset Overview</h2>
+      <span class="section-label">/ Progress</span>
+      <h2 class="title is-3">Progress</h2>
       <p class="subtitle is-5">
-        A brief description of the dataset, its scale, and what it contains.
+        An overview of the components developed to date, from waste detection and spectral
+        contamination sensing to the distributed routing pipeline.
       </p>
-    </div>
 
-    <!-- Dataset Carousel 1 -->
-    <div class="hero is-small" style="margin-top: 2rem;">
-      <div class="hero-body">
-        <div class="container">
-          <h3 class="title is-4 has-text-centered" style="margin-bottom: 1rem;">Dataset Split 1</h3>
-          <div id="dataset-carousel-1" class="carousel results-carousel">
-            <div class="item">
-              <img src="static/images/carousel1.jpg" alt="Dataset sample 1" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Sample description 1.</h2>
-            </div>
-            <div class="item">
-              <img src="static/images/carousel2.jpg" alt="Dataset sample 2" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Sample description 2.</h2>
-            </div>
-            <div class="item">
-              <img src="static/images/carousel3.jpg" alt="Dataset sample 3" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Sample description 3.</h2>
-            </div>
-            <div class="item">
-              <img src="static/images/carousel4.jpg" alt="Dataset sample 4" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Sample description 4.</h2>
-            </div>
+      <div class="accomplishment-grid">
+
+        <!-- Card 1 -->
+        <div class="accomplishment-card">
+          <span class="card-index">01</span>
+          <h3>Fine-tuned vision-language model for waste detection</h3>
+          <p>
+            We fine-tuned Qwen3-VL-4B using GRPO, a reinforcement-learning approach, to detect and
+            localize waste objects.
+            <!-- TODO(WIP): VLM detection metrics under revision, temporarily hidden. Restore when finalized.
+            On a held-out test set of 465 images, detection F1 improved from
+            effectively zero (base model) to 0.59, with mean bounding-box IoU rising from 0.19 to
+            0.86.
+            -->
+            Strong performance was achieved on textiles, paper, and glass.
+          </p>
+          <!-- TODO(WIP): VLM detection metrics under revision, temporarily hidden. Restore when finalized.
+          <div class="stat-row">
+            <div class="stat"><span class="stat-value">0 &rarr; 0.59</span><span class="stat-label">Detection F1</span></div>
+            <div class="stat"><span class="stat-value">0.19 &rarr; 0.86</span><span class="stat-label">Mean box IoU</span></div>
+            <div class="stat"><span class="stat-value">465</span><span class="stat-label">Test images</span></div>
+          </div>
+          -->
+        </div>
+
+        <!-- Card 2 -->
+        <div class="accomplishment-card">
+          <span class="card-index">02</span>
+          <h3>Spectral sensing for contamination detection</h3>
+          <p>
+            Using an 18-channel VIS/NIR spectroscopy sensor (410&ndash;940&nbsp;nm), we collected an
+            initial spectral dataset and identified a band-localized signal in the 560&ndash;585&nbsp;nm
+            range that distinguishes clean from food-contaminated surfaces. This signal provides the
+            basis for the contamination check.
+          </p>
+          <div class="stat-row">
+            <div class="stat"><span class="stat-value">18</span><span class="stat-label">Spectral channels</span></div>
+            <div class="stat"><span class="stat-value">410&ndash;940 nm</span><span class="stat-label">VIS / NIR range</span></div>
+            <div class="stat"><span class="stat-value">560&ndash;585 nm</span><span class="stat-label">Discriminating band</span></div>
           </div>
         </div>
+
+        <!-- Card 3 -->
+        <div class="accomplishment-card">
+          <span class="card-index">03</span>
+          <h3>Distributed real-time pipeline</h3>
+          <p>
+            The system runs on ROS&nbsp;2 across two machines: a Raspberry Pi handles sensing and
+            capture triggering, while a GPU workstation runs model inference, connected over a secure
+            network. A dedicated decision node fuses the visual and spectral signals and contains the
+            routing logic, applying conservative defaults so that uncertain or contaminated items are
+            not placed in the recycling stream.
+          </p>
+          <div class="stat-row">
+            <div class="stat"><span class="stat-value">ROS 2</span><span class="stat-label">Middleware</span></div>
+            <div class="stat"><span class="stat-value">Pi + GPU</span><span class="stat-label">Two machines</span></div>
+            <div class="stat"><span class="stat-value">Fusion</span><span class="stat-label">Decision node</span></div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="accomplishment-card">
+          <span class="card-index">04</span>
+          <h3>Separation of classification and routing</h3>
+          <p>
+            Classification and routing are kept separate: the model produces candidate labels, while
+            all routing decisions are made by explicit logic. These rules are implemented in
+            transparent, configurable software rather than in the model weights, and contamination
+            detection always takes precedence over classification.
+          </p>
+        </div>
+
       </div>
     </div>
 
-    <!-- Dataset Carousel 2 -->
-    <div class="hero is-small is-light" style="margin-top: 0;">
+    <!-- Detection results carousel - TODO: replace sample images with real detection outputs
+         (e.g. static/images/detection_result1.jpg … detection_result4.jpg) -->
+    <div class="hero is-small" style="margin-top: 3rem;">
       <div class="hero-body">
         <div class="container">
-          <h3 class="title is-4 has-text-centered" style="margin-bottom: 1rem;">Dataset Split 2</h3>
-          <div id="dataset-carousel-2" class="carousel results-carousel">
-            <div class="item">
-              <img src="static/images/carousel1.jpg" alt="Dataset sample A" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Sample description A.</h2>
-            </div>
-            <div class="item">
-              <img src="static/images/carousel2.jpg" alt="Dataset sample B" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Sample description B.</h2>
-            </div>
-            <div class="item">
-              <img src="static/images/carousel3.jpg" alt="Dataset sample C" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Sample description C.</h2>
-            </div>
-            <div class="item">
-              <img src="static/images/carousel4.jpg" alt="Dataset sample D" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Sample description D.</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-  <!-- ===== END DATASET OVERVIEW ===== -->
-
-
-  <!-- ===== 4. RESULTS ===== -->
-  <section class="section" id="results">
-    <div class="container is-max-desktop has-text-centered">
-      <span class="section-label">/ Results</span>
-      <h2 class="title is-3">Results</h2>
-      <p class="subtitle is-5">
-        Qualitative and quantitative results demonstrating the effectiveness of our approach.
-      </p>
-    </div>
-
-    <!-- Results Image Carousel -->
-    <div class="hero is-small" style="margin-top: 2rem;">
-      <div class="hero-body">
-        <div class="container">
+          <h3 class="title is-4 has-text-centered" style="margin-bottom: 1rem;"></h3>
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item">
-              <img src="static/images/carousel1.jpg" alt="Result visualization 1" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Result 1 description.</h2>
+              <img src="static/images/ur5e_rig.jpg" alt="UR5E manipulater with Orbbec 335 Gemini mounted on flange" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">UR5E manipulater with Orbbec 335 Gemini mounted on flange</h2>
+            </div>
+            <!-- <div class="item">
+              <img src="static/images/diff_materials.png" alt="Spectral readings of dataset collected so far" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Spectral readings of dataset collected so far</h2>
+            </div> -->
+            <div class="item">
+              <img src="static/images/vlm-detections.jpg" alt="Qwen-3-VL 4B detections on sample" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">Qwen-3-VL 4B detections on sample</h2>
             </div>
             <div class="item">
-              <img src="static/images/carousel2.jpg" alt="Result visualization 2" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Result 2 description.</h2>
-            </div>
-            <div class="item">
-              <img src="static/images/carousel3.jpg" alt="Result visualization 3" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Result 3 description.</h2>
-            </div>
-            <div class="item">
-              <img src="static/images/carousel4.jpg" alt="Result visualization 4" loading="lazy"/>
-              <h2 class="subtitle has-text-centered">Result 4 description.</h2>
+              <img src="static/images/vlm-json.png" alt="JSON output from VLM for easier and safer downstream parsing" loading="lazy"/>
+              <h2 class="subtitle has-text-centered">JSON output from VLM for easier and safer downstream parsing</h2>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Results Video Player -->
-    <div class="hero is-small is-light" style="margin-top: 0;">
+    <!-- Clean vs food-contaminated spectra (inlined from static/images/paper_cup_clean_vs_food_spectra.html) -->
+    <div class="container is-max-desktop">
+      <figure class="project-figure">
+        <div class="chart-embed">
+          <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Line chart comparing mean spectral reflectance of a clean versus food-contaminated paper hot cup across 18 wavelength channels from 410 to 940 nanometers, showing the contaminated cup reads about four times higher at 560 and 585 nanometers.</h2>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:8px;font-size:12px;color:var(--text-secondary);">
+            <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#2a78d6;"></span>Clean (solid)</span>
+            <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#eb6834;"></span>Food-contaminated (dashed)</span>
+          </div>
+          <div style="position:relative;width:100%;height:300px;">
+            <canvas id="cupChart" role="img" aria-label="Line chart: clean vs food-contaminated paper hot cup mean spectra, 410 to 940 nm">Clean cup peaks at 460 nm (248) and 610 nm (200) but drops to 13 at 560 nm; contaminated cup reads 57 at 560 nm.</canvas>
+          </div>
+        </div>
+        <figcaption>
+          Spectral differences between contaminated and non-contaminated items
+        </figcaption>
+      </figure>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const wl = ['410','435','460','485','510','535','560','585','610','645','680','705','730','760','810','860','900','940'];
+      new Chart(document.getElementById('cupChart'), {type:'line',data:{labels:wl,datasets:[
+        {label:'Clean',data:[4.8,74.7,247.6,89.3,140.4,173.6,13.4,18.1,200.4,23.6,41.6,7.2,13.4,7.8,9.5,5.3,1.3,1.9],borderColor:'#2a78d6',backgroundColor:'#2a78d6',borderWidth:2,pointRadius:3,tension:0.2},
+        {label:'Food-contaminated',data:[4.0,70.2,286.6,73.0,126.0,169.6,56.8,54.4,186.4,22.6,31.4,8.0,11.8,7.0,8.6,4.3,1.3,1.9],borderColor:'#eb6834',backgroundColor:'#eb6834',borderWidth:2,borderDash:[6,4],pointRadius:3,pointStyle:'rect',tension:0.2}
+      ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toFixed(1)}}},scales:{x:{title:{display:true,text:'Wavelength (nm)',color:'#898781',font:{size:12}},ticks:{color:'#898781',maxRotation:45,autoSkip:false,font:{size:11}},grid:{display:false}},y:{title:{display:true,text:'Calibrated counts',color:'#898781',font:{size:12}},ticks:{color:'#898781'},grid:{color:'rgba(137,135,129,0.15)'}}}}});
+    });
+    </script>
+
+    <!-- All-objects mean spectra overview (inlined from static/images/all_objects_mean_spectra_overview.html) -->
+    <div class="container is-max-desktop">
+      <figure class="project-figure">
+        <div class="chart-embed">
+          <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Line chart of mean spectra for all eight measured objects. Opaque items like carton, HDPE bottle and paper cups show strong signal peaking near 460 nanometers; clear glass and PET bottle show weak signal near zero across all channels.</h2>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:8px;font-size:12px;color:var(--text-secondary);">
+            <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#2a78d6;"></span>Carton</span>
+            <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#1baf7a;"></span>HDPE food</span>
+            <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#eda100;"></span>Cup clean</span>
+            <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#008300;"></span>Cup food</span>
+            <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#4a3aa7;"></span>Box food 002</span>
+            <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#e34948;"></span>Box food 001</span>
+            <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#e87ba4;"></span>Glass clean</span>
+            <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#898781;"></span>PET clean</span>
+          </div>
+          <div style="position:relative;width:100%;height:340px;">
+            <canvas id="allChart" role="img" aria-label="Line chart of mean spectra for all eight objects across 18 channels">Opaque objects read 100 to 295 counts at their peaks; clear glass and PET stay below 90 everywhere.</canvas>
+          </div>
+        </div>
+        <figcaption>
+          Spectral readings of dataset collected so far
+        </figcaption>
+      </figure>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const wl2 = ['410','435','460','485','510','535','560','585','610','645','680','705','730','760','810','860','900','940'];
+      const mk = (l,d,c,dash,pt) => ({label:l,data:d,borderColor:c,backgroundColor:c,borderWidth:2,borderDash:dash,pointRadius:2.5,pointStyle:pt,tension:0.2});
+      new Chart(document.getElementById('allChart'), {type:'line',data:{labels:wl2,datasets:[
+        mk('Carton',[4.0,63.7,220.3,64.7,108.1,137.3,44.2,45.9,150.1,21.3,29.6,6.2,10.2,6.1,7.0,4.3,1.3,1.9],'#2a78d6',[],'circle'),
+        mk('HDPE food',[5.5,85.2,294.8,95.0,144.5,184.0,66.2,66.3,212.8,29.4,41.8,9.3,13.4,8.7,10.3,5.3,2.0,2.9],'#1baf7a',[6,4],'rect'),
+        mk('Cup clean',[4.8,74.7,247.6,89.3,140.4,173.6,13.4,18.1,200.4,23.6,41.6,7.2,13.4,7.8,9.5,5.3,1.3,1.9],'#eda100',[],'triangle'),
+        mk('Cup food',[4.0,70.2,286.6,73.0,126.0,169.6,56.8,54.4,186.4,22.6,31.4,8.0,11.8,7.0,8.6,4.3,1.3,1.9],'#008300',[6,4],'rectRot'),
+        mk('Box food 002',[4.8,69.6,235.9,77.5,115.6,148.3,59.2,60.2,177.8,27.9,39.8,7.9,11.8,7.8,9.4,5.3,1.3,1.9],'#4a3aa7',[2,3],'circle'),
+        mk('Box food 001',[0.0,1.0,4.0,2.7,5.9,7.3,9.3,8.8,67.2,5.0,18.7,3.5,3.8,2.6,3.4,2.1,0.0,0.0],'#e34948',[2,3],'rect'),
+        mk('Glass clean',[0.1,15.9,53.8,11.9,35.2,45.7,8.3,10.0,45.9,4.2,5.3,0.9,3.1,1.8,1.8,0.1,0.0,0.0],'#e87ba4',[8,3],'triangle'),
+        mk('PET clean',[1.3,15.2,36.6,9.4,15.5,5.7,0.7,1.3,45.8,1.1,2.6,0.1,2.8,1.0,1.5,0.3,0.0,0.0],'#898781',[8,3],'rectRot')
+      ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toFixed(1)}}},scales:{x:{title:{display:true,text:'Wavelength (nm)',color:'#898781',font:{size:12}},ticks:{color:'#898781',maxRotation:45,autoSkip:false,font:{size:11}},grid:{display:false}},y:{title:{display:true,text:'Calibrated counts',color:'#898781',font:{size:12}},ticks:{color:'#898781'},grid:{color:'rgba(137,135,129,0.15)'}}}}});
+    });
+    </script>
+
+    <!-- Optional video slot - TODO: uncomment and point the iframe/video at a real source
+    <div class="hero is-small is-light" style="margin-top: 2rem;">
       <div class="hero-body">
         <div class="container">
-          <h3 class="title is-4 has-text-centered">Video Results</h3>
+          <h3 class="title is-4 has-text-centered">System in Action</h3>
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
               <div class="publication-video">
-                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                        frameborder="0"
-                        allow="autoplay; encrypted-media"
-                        allowfullscreen>
-                </iframe>
+                <iframe src="ADD_VIDEO_EMBED_URL" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
               </div>
-              <p class="has-text-centered" style="margin-top: 1rem;">
-                Caption describing the results shown in the video above.
-              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    -->
 
   </section>
-  <!-- ===== END RESULTS ===== -->
-
-
-  <!-- ===== 5. CITATIONS ===== -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <span class="section-label">/ Citations</span>
-        <h2 class="title">Citations</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
-  </section>
-  <!-- ===== END CITATIONS ===== -->
-
-
-  <!-- ===== 6. ACKNOWLEDGEMENTS ===== -->
-  <section class="section hero is-light" id="acknowledgements">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <span class="section-label">/ Acknowledgements</span>
-          <h2 class="title is-3">Acknowledgements</h2>
-          <div class="content has-text-justified">
-            <p>
-              We thank the members of [Lab/Group Name] for their helpful feedback and discussions. This work was supported by [Funding Agency] under grant [Grant Number]. We also acknowledge the use of computing resources provided by [Computing Resource].
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ===== END ACKNOWLEDGEMENTS ===== -->
+  <!-- ===== END PROGRESS ===== -->
 
   </main>
 
@@ -914,7 +1138,8 @@
         <!-- Footer text (4/5) -->
         <div style="flex: 1;" class="content">
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Project Title</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            WasteSep &middot; NICHE Robotics Lab, University of Michigan-Dearborn. This page was built
+            using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
         </div>
