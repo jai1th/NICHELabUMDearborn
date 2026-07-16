@@ -11,6 +11,10 @@
   --background-secondary: #1a1d27;
   --background-accent: #22263a;
   --border-color: #2d3148;
+  /* Foreground "ink" as an RGB triple so rgba(var(--ink), a) flips with the theme */
+  --ink: 255, 255, 255;
+  --ink-solid: #ffffff;
+  --on-accent: #06121c;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
@@ -21,6 +25,28 @@
   --border-radius: 12px;
   --border-radius-lg: 16px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== LIGHT THEME (white background — default for accessibility) ===== */
+:root[data-theme="light"] {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary-color: #475569;
+  --accent-color: #0284c7;
+  --text-primary: #1e2330;
+  --text-secondary: #45505f;
+  --text-light: #64748b;
+  --background-primary: #ffffff;
+  --background-secondary: #f5f6f8;
+  --background-accent: #eceff3;
+  --border-color: #e1e5eb;
+  --ink: 24, 30, 44;
+  --ink-solid: #0b0e14;
+  --on-accent: #ffffff;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.06);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.10), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.12), 0 8px 10px -6px rgb(0 0 0 / 0.08);
 }
 
 /* Smooth scrolling for better UX */

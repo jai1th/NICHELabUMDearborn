@@ -4,6 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Set theme before paint to avoid a flash. Light (white) is the default for accessibility;
+       a saved choice or the OS preference wins if present. -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
   <!-- Primary Meta Tags -->
   <meta name="title" content="WasteSep: Multi-Modal Waste Classification and Routing">
   <meta name="description" content="WasteSep combines vision-language models with optical spectroscopy to classify waste and route it to the correct disposal stream, with contamination detection as an explicit safety check. Developed at the NICHE Robotics Lab, University of Michigan-Dearborn, in collaboration with UMHealth (Michigan Medicine).">
@@ -112,7 +126,7 @@
 
     /* ─── Hero wrapper ─── */
     #hero-logos {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(var(--ink), 0.06);
     }
 
     #hero-logos .hero-body {
@@ -133,7 +147,7 @@
       font-size: 0.58rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(var(--ink), 0.3);
       margin-bottom: 1.4rem;
     }
 
@@ -161,7 +175,7 @@
     .hero-vdivider {
       flex-shrink: 0;
       width: 1px;
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(var(--ink), 0.07);
       align-self: stretch;
       margin: 0.5rem 0;
     }
@@ -176,6 +190,44 @@
       justify-content: center;
     }
 
+    /* ─── Affiliations bar: three institutional logos spanning ~50% of the viewport, centered ─── */
+    .affiliations-bar {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      width: 50vw;
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(var(--ink), 0.08);
+    }
+
+    /* Each logo owns an equal-width third and is centered within it, so all three
+       logo centers land on the same equidistant points regardless of logo size. */
+    .affil-logo {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .affil-logo img {
+      display: block;
+      max-height: 120px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      opacity: 0.85;
+      filter: grayscale(12%);
+      border-radius: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .affil-logo img:hover {
+      opacity: 1;
+    }
+
     /* Small venue/conference chip above the title */
     .venue-chip {
       display: inline-block;
@@ -183,8 +235,8 @@
       font-size: 0.62rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: rgba(255, 255, 255, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(var(--ink), 0.45);
+      border: 1px solid rgba(var(--ink), 0.12);
       border-radius: 2px;
       padding: 0.28rem 0.65rem;
       margin-bottom: 1.3rem;
@@ -203,37 +255,46 @@
     .hero-authors {
       font-family: 'IBM Plex Sans', sans-serif;
       font-size: 0.92rem;
-      color: rgba(255, 255, 255, 0.65);
+      color: rgba(var(--ink), 0.65);
       margin-bottom: 0.4rem;
       line-height: 1.6;
     }
 
     .hero-authors a {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(var(--ink), 0.8);
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 1px solid rgba(var(--ink), 0.15);
       padding-bottom: 1px;
       transition: color 0.15s, border-color 0.15s;
     }
 
     .hero-authors a:hover {
-      color: #fff;
-      border-bottom-color: rgba(255, 255, 255, 0.5);
+      color: var(--ink-solid);
+      border-bottom-color: rgba(var(--ink), 0.5);
     }
 
     .hero-authors sup {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.6em;
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(var(--ink), 0.4);
     }
 
     .hero-equal-note {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.58rem;
-      color: rgba(255, 255, 255, 0.28);
+      color: rgba(var(--ink), 0.28);
       letter-spacing: 0.04em;
       margin-top: 0.2rem;
       margin-bottom: 1rem;
+    }
+
+    /* Author list */
+    .hero-author-list {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.95rem;
+      color: rgba(var(--ink), 0.74);
+      line-height: 1.65;
+      margin-bottom: 0.9rem;
     }
 
     /* Institution line */
@@ -242,7 +303,7 @@
       font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: rgba(255, 255, 255, 0.32);
+      color: rgba(var(--ink), 0.32);
       margin-bottom: 0.85rem;
     }
 
@@ -250,7 +311,7 @@
     .hero-pi {
       font-family: 'IBM Plex Sans', sans-serif;
       font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(var(--ink), 0.5);
       line-height: 1.7;
       margin-bottom: 1.75rem;
     }
@@ -261,25 +322,25 @@
       font-size: 0.58rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(var(--ink), 0.3);
       margin-bottom: 0.3rem;
     }
 
     .hero-pi a {
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(var(--ink), 0.75);
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      border-bottom: 1px solid rgba(var(--ink), 0.18);
       padding-bottom: 1px;
       transition: color 0.15s, border-color 0.15s;
     }
 
     .hero-pi a:hover {
-      color: #fff;
-      border-bottom-color: rgba(255, 255, 255, 0.5);
+      color: var(--ink-solid);
+      border-bottom-color: rgba(var(--ink), 0.5);
     }
 
     .hero-pi .hero-pi-sep {
-      color: rgba(255, 255, 255, 0.25);
+      color: rgba(var(--ink), 0.25);
       margin: 0 0.5rem;
     }
 
@@ -299,9 +360,9 @@
       font-size: 0.68rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(var(--ink), 0.7);
       background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(var(--ink), 0.18);
       border-radius: 2px;
       padding: 0.45rem 0.9rem;
       text-decoration: none;
@@ -310,9 +371,9 @@
     }
 
     .hero-btn:hover {
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.45);
-      background: rgba(255, 255, 255, 0.04);
+      color: var(--ink-solid);
+      border-color: rgba(var(--ink), 0.45);
+      background: rgba(var(--ink), 0.04);
     }
 
     .hero-btn i {
@@ -335,7 +396,7 @@
       font-size: 0.6rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      color: rgba(255, 255, 255, 0.25);
+      color: rgba(var(--ink), 0.25);
       margin-bottom: 0.85rem;
       display: block;
     }
@@ -359,7 +420,7 @@
       font-size: 0.82rem !important;
       text-transform: uppercase !important;
       letter-spacing: 0.13em !important;
-      color: rgba(255, 255, 255, 0.38) !important;
+      color: rgba(var(--ink), 0.38) !important;
       font-weight: 400 !important;
       margin-bottom: 1.5rem !important;
     }
@@ -367,9 +428,9 @@
     /* is-light sections - very subtle tint instead of a solid bg change */
     .hero.is-light,
     section.hero.is-light {
-      background: rgba(255, 255, 255, 0.022) !important;
-      border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+      background: rgba(var(--ink), 0.022) !important;
+      border-top: 1px solid rgba(var(--ink), 0.05) !important;
+      border-bottom: 1px solid rgba(var(--ink), 0.05) !important;
     }
 
     /* Abstract / justified body text - sans only, no serif in body */
@@ -377,19 +438,19 @@
       font-family: 'IBM Plex Sans', sans-serif !important;
       font-size: 1.15rem !important;
       line-height: 1.88 !important;
-      color: rgba(255, 255, 255, 0.58) !important;
+      color: rgba(var(--ink), 0.58) !important;
     }
 
     /* Subtitle (dataset / results intro lines) */
     .subtitle.is-5 {
       font-size: 1.08rem !important;
-      color: rgba(255, 255, 255, 0.42) !important;
+      color: rgba(var(--ink), 0.42) !important;
       font-family: 'IBM Plex Sans', sans-serif !important;
     }
 
     /* Carousel items - no heavy shadows, thin border */
     .results-carousel .item {
-      border: 1px solid rgba(255, 255, 255, 0.07) !important;
+      border: 1px solid rgba(var(--ink), 0.07) !important;
       box-shadow: none !important;
       border-radius: 3px !important;
       padding: 0.85rem !important;
@@ -399,12 +460,12 @@
     .results-carousel .item:hover {
       transform: none !important;
       box-shadow: none !important;
-      border-color: rgba(255, 255, 255, 0.15) !important;
+      border-color: rgba(var(--ink), 0.15) !important;
     }
 
     .results-carousel .subtitle {
       font-size: 0.88rem !important;
-      color: rgba(255, 255, 255, 0.35) !important;
+      color: rgba(var(--ink), 0.35) !important;
       font-family: 'IBM Plex Mono', monospace !important;
       letter-spacing: 0.03em;
       font-weight: 400 !important;
@@ -429,8 +490,10 @@
       width: 38px !important;
       height: 38px !important;
       margin-top: -19px !important;
-      background-color: rgba(255, 255, 255, 0.92) !important;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35) !important;
+      /* Fixed light circle + dark glyph so the arrows read on either theme's gutter */
+      background-color: #ffffff !important;
+      border: 1px solid rgba(0, 0, 0, 0.12) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
     }
 
     .results-carousel .slider-navigation-previous {
@@ -460,7 +523,7 @@
     .results-carousel .slider-pagination .slider-page {
       width: 7px !important;
       height: 7px !important;
-      background: rgba(255, 255, 255, 0.28) !important;
+      background: rgba(var(--ink), 0.28) !important;
       box-shadow: none !important;
     }
 
@@ -483,7 +546,7 @@
     .publication-video {
       border-radius: 3px !important;
       box-shadow: none !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(var(--ink), 0.08) !important;
     }
 
     .publication-video:hover {
@@ -497,8 +560,8 @@
 
     /* pre / BibTeX block */
     pre {
-      background: rgba(255, 255, 255, 0.025) !important;
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      background: rgba(var(--ink), 0.025) !important;
+      border: 1px solid rgba(var(--ink), 0.08) !important;
       border-radius: 3px !important;
       box-shadow: none !important;
       font-size: 0.88rem !important;
@@ -508,8 +571,8 @@
     /* Copy BibTeX button - ghost style matching hero buttons */
     .copy-bibtex-btn {
       background: transparent !important;
-      color: rgba(255, 255, 255, 0.38) !important;
-      border: 1px solid rgba(255, 255, 255, 0.13) !important;
+      color: rgba(var(--ink), 0.38) !important;
+      border: 1px solid rgba(var(--ink), 0.13) !important;
       border-radius: 2px !important;
       font-family: 'IBM Plex Mono', monospace !important;
       font-size: 0.62rem !important;
@@ -522,9 +585,9 @@
     }
 
     .copy-bibtex-btn:hover {
-      background: rgba(255, 255, 255, 0.04) !important;
-      border-color: rgba(255, 255, 255, 0.32) !important;
-      color: rgba(255, 255, 255, 0.75) !important;
+      background: rgba(var(--ink), 0.04) !important;
+      border-color: rgba(var(--ink), 0.32) !important;
+      color: rgba(var(--ink), 0.75) !important;
       transform: none !important;
       box-shadow: none !important;
     }
@@ -532,26 +595,182 @@
     /* Scroll-to-top - ghost, square */
     .scroll-to-top {
       background: transparent !important;
-      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      border: 1px solid rgba(var(--ink), 0.16) !important;
       border-radius: 2px !important;
       width: 36px !important;
       height: 36px !important;
       font-size: 0.75rem !important;
-      color: rgba(255, 255, 255, 0.4) !important;
+      color: rgba(var(--ink), 0.4) !important;
       box-shadow: none !important;
     }
 
     .scroll-to-top:hover {
-      background: rgba(255, 255, 255, 0.05) !important;
-      border-color: rgba(255, 255, 255, 0.38) !important;
-      color: rgba(255, 255, 255, 0.85) !important;
+      background: rgba(var(--ink), 0.05) !important;
+      border-color: rgba(var(--ink), 0.38) !important;
+      color: rgba(var(--ink), 0.85) !important;
       transform: none !important;
       box-shadow: none !important;
     }
 
+    /* ─── Light / dark theme toggle ─── */
+    .theme-toggle {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(var(--ink), 0.18);
+      border-radius: 2px;
+      background: rgba(var(--ink), 0.04);
+      color: rgba(var(--ink), 0.6);
+      font-size: 0.9rem;
+      cursor: pointer;
+      z-index: 1000;
+      transition: color 0.18s, border-color 0.18s, background 0.18s;
+    }
+
+    .theme-toggle:hover {
+      color: var(--ink-solid);
+      border-color: rgba(var(--ink), 0.45);
+      background: rgba(var(--ink), 0.09);
+    }
+
+    /* Base (dark) theme shows the sun (click to go light); light theme shows the moon */
+    .theme-toggle .theme-ico-moon { display: none; }
+    .theme-toggle .theme-ico-sun { display: inline-block; }
+    :root[data-theme="light"] .theme-toggle .theme-ico-sun { display: none; }
+    :root[data-theme="light"] .theme-toggle .theme-ico-moon { display: inline-block; }
+
+    /* ═══════════════════════════════════════════
+       LEFT SECTION-NAV RAIL (scrollspy)
+       ═══════════════════════════════════════════ */
+    .section-nav {
+      position: fixed;
+      top: 50%;
+      left: 1.75rem;
+      transform: translateY(-50%);
+      z-index: 900;
+    }
+
+    .section-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      position: relative;
+    }
+
+    /* Thin vertical line linking the dots */
+    .section-nav ul::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 1rem;
+      bottom: 1rem;
+      width: 1px;
+      background: rgba(var(--ink), 0.12);
+      z-index: 0;
+    }
+
+    .section-nav a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.45rem 0;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-nav .dot {
+      flex: 0 0 auto;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(var(--ink), 0.3);
+      background: var(--background-primary);
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+
+    .section-nav .label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(var(--ink), 0.4);
+      white-space: nowrap;
+      transition: color 0.2s, opacity 0.2s;
+    }
+
+    .section-nav a:hover .dot {
+      border-color: rgba(var(--ink), 0.6);
+    }
+
+    .section-nav a:hover .label {
+      color: rgba(var(--ink), 0.75);
+    }
+
+    /* Active section */
+    .section-nav a.is-active .dot {
+      border-color: var(--accent-color, #38bdf8);
+      background: var(--accent-color, #38bdf8);
+      transform: scale(1.15);
+    }
+
+    .section-nav a.is-active .label {
+      color: var(--accent-color, #38bdf8);
+    }
+
+    .section-nav a:focus-visible .dot {
+      outline: 2px solid var(--accent-color, #38bdf8);
+      outline-offset: 2px;
+    }
+
+    /* Medium screens: dots only; label appears as a tooltip on hover / focus */
+    @media screen and (max-width: 1279px) {
+      .section-nav .label {
+        position: absolute;
+        left: calc(100% + 0.65rem);
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        pointer-events: none;
+        background: var(--background-secondary);
+        border: 1px solid rgba(var(--ink), 0.1);
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .section-nav a:hover .label,
+      .section-nav a:focus-visible .label {
+        opacity: 1;
+      }
+    }
+
+    /* Narrow screens: hide the rail so it never overlaps content */
+    @media screen and (max-width: 1023px) {
+      .section-nav {
+        display: none;
+      }
+    }
+
+    /* ─── Per-theme logo swap (white UM-Dearborn mark on dark, full-colour on light) ─── */
+    .theme-logo-light { display: none !important; }
+    :root[data-theme="light"] .theme-logo-dark { display: none !important; }
+    :root[data-theme="light"] .theme-logo-light { display: block !important; }
+
+    /* UM-Health / Michigan Medicine logo (drop static/images/umhealth.png to enable) */
+    .umhealth-logo { margin-top: 1.1rem !important; max-height: 74px !important; }
+
     /* Footer - ultra minimal */
     .footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+      border-top: 1px solid rgba(var(--ink), 0.06) !important;
       background: transparent !important;
       padding: 2.5rem 1.5rem !important;
     }
@@ -560,20 +779,20 @@
       font-family: 'IBM Plex Mono', monospace !important;
       font-size: 0.68rem !important;
       letter-spacing: 0.02em;
-      color: rgba(255, 255, 255, 0.22) !important;
+      color: rgba(var(--ink), 0.22) !important;
       line-height: 2 !important;
     }
 
     .footer a {
-      color: rgba(255, 255, 255, 0.38) !important;
+      color: rgba(var(--ink), 0.38) !important;
       text-decoration: none !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(var(--ink), 0.1);
       padding-bottom: 1px;
     }
 
     .footer a:hover {
-      color: rgba(255, 255, 255, 0.68) !important;
-      border-bottom-color: rgba(255, 255, 255, 0.3);
+      color: rgba(var(--ink), 0.68) !important;
+      border-bottom-color: rgba(var(--ink), 0.3);
       text-decoration: none !important;
     }
 
@@ -610,13 +829,23 @@
         display: none !important;
       }
 
-      /* Content column drops below logos, full width */
+      /* Content column: full width, tighter padding */
       .hero-content-col {
-        flex: 0 0 100% !important;
-        order: 2;
         padding: 1.5rem 1rem !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        margin-top: 0.5rem;
+      }
+
+      /* Affiliations bar: full width and centered on small screens (50vw is too narrow) */
+      .affiliations-bar {
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.75rem;
+        padding-top: 1.5rem;
+      }
+
+      .affil-logo img {
+        max-height: 66px;
+        max-width: 100%;
       }
 
       /* Title scales down on small screens */
@@ -714,25 +943,25 @@
     }
 
     .accomplishment-card {
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(var(--ink), 0.08);
       border-radius: 4px;
       padding: 1.75rem 1.6rem;
-      background: rgba(255, 255, 255, 0.015);
+      background: rgba(var(--ink), 0.015);
       transition: border-color 0.2s, background 0.2s;
       display: flex;
       flex-direction: column;
     }
 
     .accomplishment-card:hover {
-      border-color: rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(var(--ink), 0.18);
+      background: rgba(var(--ink), 0.03);
     }
 
     .accomplishment-card .card-index {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.6rem;
       letter-spacing: 0.18em;
-      color: rgba(255, 255, 255, 0.25);
+      color: rgba(var(--ink), 0.25);
       margin-bottom: 0.9rem;
     }
 
@@ -740,7 +969,7 @@
       font-family: 'IBM Plex Serif', Georgia, serif !important;
       font-size: 1.12rem !important;
       font-weight: 600 !important;
-      color: rgba(255, 255, 255, 0.9) !important;
+      color: rgba(var(--ink), 0.9) !important;
       letter-spacing: -0.01em !important;
       line-height: 1.25 !important;
       margin-bottom: 0.85rem !important;
@@ -751,7 +980,7 @@
       font-family: 'IBM Plex Sans', sans-serif;
       font-size: 0.95rem;
       line-height: 1.7;
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(var(--ink), 0.55);
       margin-bottom: 1.25rem;
     }
 
@@ -766,7 +995,7 @@
       gap: 1.4rem;
       margin-top: auto;
       padding-top: 1.15rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(var(--ink), 0.06);
     }
 
     .stat {
@@ -788,7 +1017,7 @@
       font-size: 0.56rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: rgba(255, 255, 255, 0.32);
+      color: rgba(var(--ink), 0.32);
       margin-top: 0.4rem;
     }
 
@@ -806,9 +1035,9 @@
       font-family: 'IBM Plex Sans', sans-serif;
       font-size: 1.02rem;
       line-height: 1.6;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(var(--ink), 0.6);
       padding: 1rem 0 1rem 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(var(--ink), 0.06);
     }
 
     .whats-next-list li:last-child {
@@ -835,26 +1064,131 @@
     .project-figure img {
       max-width: 100%;
       height: auto;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(var(--ink), 0.08);
       border-radius: 3px;
     }
 
     /* Inlined Chart.js spectral plots sit in the same bordered frame as figures */
     .project-figure .chart-embed {
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(var(--ink), 0.08);
       border-radius: 3px;
       padding: 1.25rem 1.25rem 0.85rem;
-      background: rgba(255, 255, 255, 0.015);
+      background: rgba(var(--ink), 0.015);
       text-align: left;
     }
 
     .project-figure figcaption {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.72rem;
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(var(--ink), 0.35);
       margin-top: 0.9rem;
       letter-spacing: 0.02em;
       line-height: 1.6;
+    }
+
+    /* ─── Download-dataset call-to-action ─── */
+    .dataset-download {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+      margin-top: 2.75rem;
+    }
+
+    .dataset-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--on-accent);
+      background: var(--accent-color, #38bdf8);
+      border: 1px solid transparent;
+      border-radius: 3px;
+      padding: 0.75rem 1.4rem;
+      text-decoration: none;
+      transition: background 0.18s, transform 0.18s, box-shadow 0.18s, border-color 0.18s, color 0.18s;
+    }
+
+    .dataset-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .dataset-btn i {
+      font-size: 0.9rem;
+    }
+
+    /* Secondary (outline) button — external / third-party dataset */
+    .dataset-btn.is-secondary {
+      color: var(--accent-color, #38bdf8);
+      background: transparent;
+      border: 1px solid rgba(var(--ink), 0.2);
+    }
+
+    .dataset-btn.is-secondary:hover {
+      background: rgba(var(--ink), 0.04);
+      border-color: var(--accent-color, #38bdf8);
+      color: var(--accent-color, #38bdf8);
+    }
+
+    /* Explanatory note + citation under the dataset buttons */
+    .dataset-note {
+      max-width: 660px;
+      margin: 1.4rem auto 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(var(--ink), 0.52);
+      text-align: center;
+    }
+
+    .dataset-note a {
+      color: rgba(var(--ink), 0.72);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(var(--ink), 0.2);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .dataset-note a:hover {
+      color: var(--ink-solid);
+      border-bottom-color: rgba(var(--ink), 0.5);
+    }
+
+    .cite-ref {
+      border-bottom: none !important;
+      color: var(--accent-color, #38bdf8) !important;
+      padding: 0 !important;
+    }
+
+    /* Footnote-style reference list */
+    .references-list {
+      max-width: 660px;
+      margin: 1.75rem auto 0;
+      padding-left: 1.3rem;
+      text-align: left;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.8rem;
+      line-height: 1.65;
+      color: rgba(var(--ink), 0.5);
+    }
+
+    .references-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .references-list a {
+      color: rgba(var(--ink), 0.7);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(var(--ink), 0.2);
+    }
+
+    .references-list a:hover {
+      color: var(--ink-solid);
     }
 
     /* Cards stack to a single column on narrow screens */
@@ -876,61 +1210,70 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
+  <!-- Light / Dark theme toggle (icon swaps via CSS on data-theme) -->
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light / dark theme" aria-label="Toggle light or dark theme">
+    <i class="fas fa-sun theme-ico theme-ico-sun" aria-hidden="true"></i>
+    <i class="fas fa-moon theme-ico theme-ico-moon" aria-hidden="true"></i>
+  </button>
+
+  <!-- Left section-navigation rail (scrollspy — active item is set in static/js/index.js) -->
+  <nav class="section-nav" aria-label="Page sections">
+    <ul>
+      <li><a href="#hero-logos"><span class="dot" aria-hidden="true"></span><span class="label">Top</span></a></li>
+      <li><a href="#mission"><span class="dot" aria-hidden="true"></span><span class="label">Overview</span></a></li>
+      <li><a href="#accomplishments"><span class="dot" aria-hidden="true"></span><span class="label">Progress</span></a></li>
+      <li><a href="#acknowledgements"><span class="dot" aria-hidden="true"></span><span class="label">Acknowledgements</span></a></li>
+    </ul>
+  </nav>
+
   <main id="main-content">
 
   <!-- ===== HERO + LOGOS ===== -->
   <section class="hero" id="hero-logos">
     <div class="hero-body">
-      <div class="container is-fluid">
+      <div class="container is-max-desktop">
 
-        <!-- Outer flex row: UM Dearborn | divider | content | divider | NICHE -->
-        <div class="hero-flex-row" style="display: flex; align-items: stretch; gap: 0;">
+        <!-- CENTER: title, tagline, authors -->
+        <div class="hero-content-col">
 
-          <!-- LEFT: UMDearborn logo (1/5) -->
-          <div class="hero-logo-col" style="flex: 0 0 20%; min-width: 120px; align-items: center; justify-content: center;">
-            <img src="static/images/cecs_white.png" alt="University of Michigan-Dearborn">
-          </div>
+          <!-- Collaboration chip -->
+          <span class="venue-chip">In collaboration with UMHealth · Michigan Medicine</span>
 
-          <!-- Vertical divider -->
-          <div class="hero-vdivider"></div>
+          <!-- Project title -->
+          <h1 class="publication-title">WasteSep: Multi-Modal Waste Classification and Routing</h1>
 
-          <!-- CENTER: title, tagline (3/5) -->
-          <div class="hero-content-col" style="flex: 0 0 60%; min-width: 0;">
+          <!-- One-line system summary -->
+          <p class="hero-authors">
+            A system that combines vision-language models with optical spectroscopy to classify
+            waste and route it to the correct disposal stream, treating contamination detection as
+            an explicit safety check.
+          </p>
 
-            <!-- Collaboration chip -->
-            <span class="venue-chip">In collaboration with UMHealth · Michigan Medicine</span>
+          <!-- Authors -->
+          <p class="hero-author-list">
+            Jaivanth Melanaturu, Steven Keckan, Christopher Victory, Chip Amoe,
+            Alireza Mohammadi, Krisanu Bandopadhyay, and Karishma Patnaik
+          </p>
 
-            <!-- Project title -->
-            <h1 class="publication-title">WasteSep: Multi-Modal Waste Classification and Routing</h1>
+          <!-- Institution -->
+          <p class="hero-institution">NICHE Robotics Lab &middot; University of Michigan-Dearborn</p>
 
-            <!-- One-line system summary -->
-            <p class="hero-authors">
-              A system that combines vision-language models with optical spectroscopy to classify
-              waste and route it to the correct disposal stream, treating contamination detection as
-              an explicit safety check.
-            </p>
+        </div>
 
-            <!-- Institution -->
-            <p class="hero-institution">NICHE Robotics Lab &middot; University of Michigan-Dearborn</p>
-
-            <!-- Principal investigator -->
-            <p class="hero-pi">
-              <span class="hero-pi-label">Principal Investigator</span>
-              <a href="https://umdearborn.edu/people-um-dearborn/karishma-patnaik" target="_blank" rel="noopener">Dr Karishma Patnaik</a>
-              <span class="hero-pi-sep">&middot;</span>
-              <a href="mailto:kpatnaik@umich.edu">kpatnaik@umich.edu</a>
-            </p>
-
-          </div>
-
-          <!-- Vertical divider -->
-          <div class="hero-vdivider"></div>
-
-          <!-- RIGHT: NICHE logo (1/5) -->
-          <div class="hero-logo-col" style="flex: 0 0 20%; min-width: 120px; align-items: center; justify-content: center;">
-            <img src="static/images/niche_gemini.webp" alt="NICHE Robotics Lab" style="max-height: 200px;">
-          </div>
-
+        <!-- AFFILIATIONS BAR: the three institutional logos in one evenly-spaced row. -->
+        <div class="affiliations-bar">
+          <!-- UM-Dearborn (CECS): white mark on dark theme, full-colour mark on light theme -->
+          <span class="affil-logo">
+            <img class="theme-logo-dark" src="static/images/cecs_white.png" alt="University of Michigan-Dearborn, College of Engineering &amp; Computer Science">
+            <img class="theme-logo-light" src="static/images/CECS_vertical_HEX.png" alt="University of Michigan-Dearborn, College of Engineering &amp; Computer Science">
+          </span>
+          <!-- University of Michigan Health / Michigan Medicine (self-contained navy tile, reads on both themes) -->
+          <span class="affil-logo">
+            <img src="static/images/UM-Helath.png" alt="University of Michigan Health &middot; Michigan Medicine">
+          </span>
+          <span class="affil-logo">
+            <img src="static/images/niche_gemini.webp" alt="NICHE Robotics Lab">
+          </span>
         </div>
 
       </div>
@@ -1146,6 +1489,39 @@
     });
     </script>
 
+    <!-- Download dataset call-to-action -->
+    <div class="container is-max-desktop">
+      <div class="dataset-download">
+        <a class="dataset-btn" href="https://drive.google.com/drive/folders/1Dle891XKG53N6BXBA9BcDxF62XbRypor?usp=drive_link" target="_blank" rel="noopener">
+          <i class="fas fa-download" aria-hidden="true"></i> Download the dataset here
+        </a>
+        <a class="dataset-btn is-secondary" href="https://www.modelscope.cn/datasets/YizheDev/trash_detection" target="_blank" rel="noopener">
+          <i class="fas fa-database" aria-hidden="true"></i> Trash-detection dataset (ModelScope)
+        </a>
+      </div>
+
+      <!-- Writeup + citation for the third-party trash-detection dataset -->
+      <p class="dataset-note">
+        For the vision stage we also build on a public
+        <a href="https://www.modelscope.cn/datasets/YizheDev/trash_detection" target="_blank" rel="noopener">trash-detection dataset</a>
+        released with the MRS-YOLO waste-detection study: 12,072 smartphone images spanning ten waste
+        categories (metal, paper, glass, plastic, textiles, ceramics, and other recyclable and
+        non-recyclable classes), captured under varied daylight, shadow, and artificial night lighting
+        for robustness. In that work the dataset supports a YOLO-based detector reaching 74.5%&nbsp;mAP@0.5,
+        making it a useful, diverse source of labelled waste imagery for training and evaluating our
+        detection component.<a class="cite-ref" href="#ref-mrs-yolo" id="cite-mrs-yolo"><sup>[1]</sup></a>
+      </p>
+
+      <ol class="references-list">
+        <li id="ref-mrs-yolo">
+          Y. Ren, Y. Li, and X. Gao, &ldquo;An MRS-YOLO Model for High-Precision Waste Detection and
+          Classification,&rdquo; <em>Sensors</em>, vol.&nbsp;24, no.&nbsp;13, art.&nbsp;4339, 2024.
+          <a href="https://doi.org/10.3390/s24134339" target="_blank" rel="noopener">doi:10.3390/s24134339</a>
+        </li>
+      </ol>
+    </div>
+
+
     <!-- Optional video slot - TODO: uncomment and point the iframe/video at a real source
     <div class="hero is-small is-light" style="margin-top: 2rem;">
       <div class="hero-body">
@@ -1166,6 +1542,29 @@
   </section>
   <!-- ===== END PROGRESS ===== -->
 
+
+  <!-- ===== 4. ACKNOWLEDGEMENTS ===== -->
+  <section class="section hero is-light" id="acknowledgements">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <span class="section-label">/ Acknowledgements</span>
+          <h2 class="title is-3">Acknowledgements</h2>
+          <div class="content has-text-justified">
+            <p>
+              This work is supported by the Graham Sustainability Institute at the University of
+              Michigan. We gratefully acknowledge our collaborators at Michigan Medicine (UM-Health)
+              for their guidance on healthcare waste streams and for access to representative
+              materials.
+            </p>
+            <!-- TODO: if specific UM-Health collaborators should be named here, add them. -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== END ACKNOWLEDGEMENTS ===== -->
+
   </main>
 
   <footer class="footer">
@@ -1173,9 +1572,13 @@
       <div class="footer-flex-row" style="display: flex; align-items: center; gap: 0;">
 
         <!-- Logos (1/5) -->
-        <div style="flex: 0 0 20%; display: flex; align-items: center; gap: 1.25rem; padding-right: 2rem;">
-          <img src="static/images/cecs_white.png" alt="University of Michigan-Dearborn"
+        <div style="flex: 0 0 20%; display: flex; align-items: center; flex-wrap: wrap; gap: 1.25rem; padding-right: 2rem;">
+          <img class="theme-logo-dark" src="static/images/cecs_white.png" alt="University of Michigan-Dearborn"
                style="max-height: 72px; width: auto; object-fit: contain; opacity: 0.4; border-radius: 6px;">
+          <img class="theme-logo-light" src="static/images/umdearborn.png" alt="University of Michigan-Dearborn"
+               style="max-height: 72px; width: auto; object-fit: contain; opacity: 0.55; border-radius: 6px;">
+          <img src="static/images/UM-Helath.png" alt="University of Michigan Health / Michigan Medicine"
+               style="max-height: 72px; width: auto; object-fit: contain; opacity: 0.5; border-radius: 6px;" onerror="this.style.display='none'">
           <img src="static/images/niche_gemini.webp" alt="NICHE Robotics Lab"
                style="max-height: 72px; width: auto; object-fit: contain; opacity: 0.4; border-radius: 6px;">
         </div>
